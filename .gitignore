@@ -1,0 +1,49 @@
+# Dependencies / local install
+node_modules/
+
+# Env & secrets
+.env
+.env.*
+!.env.example
+
+# Vercel
+.vercel
+
+# OS / editor
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+
+# Python tooling
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Local scrapes & temp extracts (keep out of git)
+tmp-*
+*-scrape.html
+avanza-home.html
+avanza-home-full.html
+consonance-scrape.html
+tmp-orion-parse-out.txt
+tmp-orion-parse.json
+*.py
+!scripts/**/*.py
+
+# PDF page renders used only during rebuilds
+assets/cases/
+
+# Nested / alternate project
+ITOO-2/
+ITOO-2.zip
+ITOO-2-deploy.zip
+
+# Production zip (huge)
+ITOO2026-Live.zip
+
+# Extra local clutter if present
+__pycache__/
+*.zip

@@ -1,0 +1,13 @@
+{
+  "name": "itoo-technologies",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ITOO Technologies static marketing site",
+  "scripts": {
+    "dev": "npx --yes serve -l 3000 .",
+    "start": "npx --yes serve -l 3000 ."
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

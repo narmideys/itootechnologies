@@ -1,0 +1,202 @@
+/* Cybersecurity Solutions page — extends qafi.css */
+
+.cy-hero__bg {
+  background:
+    linear-gradient(120deg, rgba(8, 6, 20, 0.62), rgba(20, 10, 40, 0.28)),
+    url("assets/cyber/hero.jpg") center / cover no-repeat;
+}
+
+.cy-hero .qf-hero__title {
+  max-width: 18ch;
+}
+
+.cy-features {
+  list-style: none;
+  margin: clamp(28px, 5vw, 48px) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(16px, 2.5vw, 24px);
+}
+
+.cy-features li {
+  padding: clamp(22px, 3vw, 28px);
+  background: #fff;
+  border: 1px solid rgba(96, 38, 158, 0.12);
+  box-shadow: 0 10px 30px rgba(20, 10, 40, 0.04);
+}
+
+.cy-features li:nth-child(odd) {
+  border-radius: 0 56px 0 56px;
+}
+
+.cy-features li:nth-child(even) {
+  border-radius: 56px 0 56px 0;
+}
+
+.cy-features__icon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 16px;
+  color: var(--qf-accent, #60269e);
+}
+
+.cy-features__icon img {
+  display: block;
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.cy-features h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.cy-features p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--qf-muted);
+}
+
+.cy-services {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 2.5vw, 24px);
+  margin-top: clamp(24px, 4vw, 40px);
+}
+
+.cy-service {
+  padding: clamp(22px, 3vw, 28px);
+  background: #fff;
+  border: 1px solid rgba(96, 38, 158, 0.12);
+}
+
+.cy-service h3 {
+  margin: 0 0 16px;
+  font-size: 18px;
+  font-weight: 650;
+  color: var(--qf-ink, #1a1228);
+}
+
+.cy-service ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.cy-service li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--qf-muted);
+}
+
+.cy-service li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.45em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--qf-accent, #60269e);
+}
+
+.cy-pillars {
+  list-style: none;
+  margin: 22px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.cy-pillars li {
+  padding: 16px 18px;
+  background: var(--qf-soft);
+  border: 1px solid rgba(96, 38, 158, 0.1);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--qf-muted);
+}
+
+.cy-pillars strong {
+  color: var(--qf-ink, #1a1228);
+  font-weight: 650;
+}
+
+.cy-media {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 0;
+  min-height: clamp(240px, 32vw, 420px);
+  background: #0c0816;
+}
+
+.cy-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: clamp(240px, 32vw, 420px);
+  object-fit: cover;
+}
+
+.cy-media--cutout {
+  clip-path: polygon(14% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.cy-media--cutout-flip {
+  clip-path: polygon(0 0, 100% 0, 86% 100%, 0 100%);
+}
+
+.cy-infographic {
+  padding-block: clamp(36px, 6vw, 72px);
+}
+
+.cy-infographic__media {
+  margin: 0 auto;
+  max-width: min(1080px, 100%);
+  overflow: hidden;
+}
+
+.cy-infographic__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.cy-cta {
+  background:
+    linear-gradient(120deg, rgba(18, 8, 36, 0.92), rgba(96, 38, 158, 0.85)),
+    url("assets/cyber/hero.jpg") center / cover no-repeat;
+}
+
+@media (max-width: 1000px) {
+  .cy-services {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .cy-features {
+    grid-template-columns: 1fr;
+  }
+
+  .cy-features li:nth-child(odd),
+  .cy-features li:nth-child(even) {
+    border-radius: 0 40px 0 40px;
+  }
+
+  .cy-media--cutout,
+  .cy-media--cutout-flip {
+    clip-path: polygon(8% 0, 100% 0, 100% 100%, 0 100%);
+  }
+}

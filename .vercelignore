@@ -1,0 +1,30 @@
+# Scrapes / working copies
+tmp-*
+*-scrape.html
+avanza-home.html
+avanza-home-full.html
+consonance-scrape.html
+
+# Local tooling / extracts
+*.py
+*.pyc
+__pycache__/
+parse-orion.py
+tmp-orion-parse-out.txt
+tmp-orion-parse.json
+
+# Unused page dump folders
+collabrex_pages/
+consonance_pages/
+
+# PDF reference renders (not served by the site)
+assets/cases/
+
+# Editor / OS / Vercel local
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+.env
+.env.*
+.vercel

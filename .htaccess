@@ -1,0 +1,33 @@
+# Hostinger / Apache — clean URLs (hide .html)
+# Works alongside Vercel cleanUrls for shared-hosting deploys.
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Don't rewrite real files or directories
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Redirect /index.html → /
+  RewriteCond %{ENV:REDIRECT_STATUS} ^$
+  RewriteRule ^index\.html$ / [R=301,L]
+
+  # Redirect /page.html → /page (canonical clean URL)
+  RewriteCond %{ENV:REDIRECT_STATUS} ^$
+  RewriteRule ^(.+)\.html$ /$1 [R=301,L]
+
+  # Internally serve /page as /page.html when that file exists
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.+?)/?$ $1.html [L]
+</IfModule>
+
+# Optional: safer defaults for static hosting
+Options -Indexes
+
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set X-Frame-Options "SAMEORIGIN"
+</IfModule>
